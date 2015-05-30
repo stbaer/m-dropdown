@@ -1,6 +1,6 @@
 # m-dropdown [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
 
-> material like dropdown
+> dropdown menu module without dependencies
 
 
 ## Install
@@ -15,15 +15,15 @@ $ npm install --save stbaer/m-dropdown
 ### JavaScript
 
 ```js
-var m-dropdown = require('m-dropdown');
 
-m-dropdown('Rainbow');
+var mDropdown = require('m-dropdown');
+
+mDropdown.initialize();
 ```
 
 ### Command Line reference
 
 ```sh
-
 # Creates a browser.js
 $ npm run browser
 ```
