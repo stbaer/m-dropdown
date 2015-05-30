@@ -3,11 +3,7 @@
 var mDropdown = require('../src');
 
 function init() {
-  mDropdown.initialize()
+  mDropdown.initialize();
 }
-
-
-
-
 
 window.onload = init;

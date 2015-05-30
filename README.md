@@ -24,7 +24,7 @@ mDropdown.initialize();
 ### Command Line reference
 
 ```sh
-# Creates a browser.js
+# Creates dist/browser.js
 $ npm run browser
 ```
 
