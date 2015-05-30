@@ -1,7 +1,7 @@
 'use strict';
 var gulp = require('gulp'),
-	jshint = require('gulp-jshint'),
-		
+	jshint = require('gulp-jshint');
+
 gulp.task('lint', function() {
 	return gulp.src(['*.js'])
 		.pipe(jshint())

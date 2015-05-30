@@ -6,7 +6,7 @@
 ## Install
 
 ```sh
-$ npm install --save m-dropdown
+$ npm install --save stbaer/m-dropdown
 ```
 
 
@@ -22,10 +22,6 @@ m-dropdown('Rainbow');
 
 ### Command Line reference
 
-```sh
-$ npm install --global m-dropdown
-$ m-dropdown --help
-```
 ```sh
 
 # Creates a browser.js
@@ -46,7 +42,6 @@ For bugs and feature requests, [please create an issue][issue-url].
 MIT © [Steffen Bär](https://github.com/stbaer)
 
 [issue-url]: https://github.com/stbaer/m-dropdown/issues
-[npm-url]: https://npmjs.org/package/m-dropdown
 [npm-image]: https://badge.fury.io/js/m-dropdown.svg
 [travis-url]: https://travis-ci.org/stbaer/m-dropdown
 [travis-image]: https://travis-ci.org/stbaer/m-dropdown.svg?branch=master
