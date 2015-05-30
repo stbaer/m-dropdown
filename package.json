@@ -27,7 +27,6 @@
     "beefy": "^2.1.5",
     "browserify": "^7.0.0",
     "gulp": "^3.8.11",
-    "gulp-cli": "^0.1.5",
     "gulp-jshint": "^1.9.2",
     "gulp-watch": "^4.1.1",
     "jshint-stylish": "^1.0.0"
