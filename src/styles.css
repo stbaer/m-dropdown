@@ -1,3 +1,8 @@
+@keyframes m-node-inserted {
+  from {opacity: 0.99;}
+  to {opacity: 1;}
+}
+
 .m-dropdown {
   display: inline-block;
   position: relative;
