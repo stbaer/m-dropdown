@@ -2,6 +2,7 @@
   "name": "m-dropdown",
   "version": "0.0.1",
   "description": "dropdown",
+  "main": "src/index.js",
   "bugs": {
     "url": "https://github.com/stbaer/m-dropdown/issues"
   },
