@@ -1,12 +1,12 @@
 'use strict';
 
 /**
- * @module dropdowns
+ * @module m-dropdown
  */
 
-var attrSelector = '[data-m-toggle="dropdown"]',
-  openClass = 'm-open',
-  menuClass = 'm-dropdown-menu';
+var ATTR_SELECTOR = '[data-m-toggle="dropdown"]',
+  OPEN_CLASS = 'm-open',
+  MENU_CLASS = 'm-dropdown-menu';
 
 
 /**
@@ -15,12 +15,13 @@ var attrSelector = '[data-m-toggle="dropdown"]',
  * @param {Element} toggleEl - The dropdown toggle element.
  */
 function toggle(toggleEl) {
+
   var wrapperEl = toggleEl.parentNode,
     menuEl = toggleEl.nextElementSibling,
     doc = wrapperEl.ownerDocument;
 
   // exit if no menu element
-  if (!menuEl || !menuEl.classList.contains(menuClass)) {
+  if (!menuEl || !menuEl.classList.contains(MENU_CLASS)) {
     return console.warn('Dropdown menu element not found');
   }
 
@@ -29,7 +30,7 @@ function toggle(toggleEl) {
   }
 
   function close() {
-    menuEl.classList.remove(openClass);
+    menuEl.classList.remove(OPEN_CLASS);
 
     // remove event handlers
     doc.removeEventListener('click', close);
@@ -45,14 +46,14 @@ function toggle(toggleEl) {
     var top = toggleRect.top - wrapperRect.top + toggleRect.height;
     menuEl.style.top = top + 'px';
 
-    menuEl.classList.add(openClass);
+    menuEl.classList.add(OPEN_CLASS);
 
     toggleEl.addEventListener('click', stopPropagation);
     menuEl.addEventListener('click', stopPropagation);
     doc.addEventListener('click', close);
   }
 
-  if (menuEl.classList.contains(openClass)) {
+  if (menuEl.classList.contains(OPEN_CLASS)) {
     close();
   }
   else {
@@ -72,17 +73,27 @@ function onToggleElClicked(ev) {
   }
 
   var toggleEl = this;
+  var isOpen = !!toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length;
 
   // exit if toggle button is disabled
   if (toggleEl.getAttribute('disabled') !== null) {
     return;
+  }
+  //close all open menus
+  var toggleElements = document.querySelectorAll(ATTR_SELECTOR);
+  for (var i = toggleElements.length - 1; i >= 0; i--) {
+    if(toggleElements[i].parentNode.querySelectorAll('.' + OPEN_CLASS).length){
+      toggle(toggleElements[i]);
+    }
   }
 
   // prevent form submission
   ev.preventDefault();
   ev.stopPropagation();
 
-  toggle(toggleEl);
+  if(!isOpen){ //nothing more to do
+    toggle(toggleEl);
+  }
 }
 
 /**
@@ -94,9 +105,7 @@ function init(toggleEl) {
   if (toggleEl._mDropdown === true) {
     return;
   }
-  else {
-    toggleEl._mDropdown = true;
-  }
+  toggleEl._mDropdown = true;
   toggleEl.addEventListener('click', onToggleElClicked);
 }
 
@@ -107,7 +116,7 @@ module.exports = {
   initialize: function () {
     var doc = document;
 
-    var elList = doc.querySelectorAll(attrSelector);
+    var elList = doc.querySelectorAll(ATTR_SELECTOR);
     for (var i = elList.length - 1; i >= 0; i--) {
       init(elList[i]);
     }
