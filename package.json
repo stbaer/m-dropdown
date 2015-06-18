@@ -26,11 +26,11 @@
   "dependencies": {},
   "devDependencies": {
     "beefy": "^2.1.5",
-    "browserify": "^7.0.0",
-    "gulp": "^3.8.11",
-    "gulp-jshint": "^1.9.2",
-    "gulp-watch": "^4.1.1",
-    "jshint-stylish": "^1.0.0"
+    "browserify": "^10.2.4",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-watch": "^4.2.4",
+    "jshint-stylish": "^2.0.0"
   },
   "scripts": {
     "example": "beefy test/test.js --index=example.html",
