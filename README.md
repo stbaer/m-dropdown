@@ -1,27 +1,38 @@
 # m-dropdown [![Dependency Status][daviddm-url]][daviddm-image]
 
-> dropdown menu module without dependencies
+[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
 
-
-## Install
-
-```sh
-$ npm install --save stbaer/m-dropdown
-```
-
+> Lightweight dropdown menu
 
 ## Usage
 
-### JavaScript
+```sh
+$ npm install --save m-dropdown
+```
+```html
+<div class="m-dropdown">
+  <button data-m-toggle="dropdown">
+    Dropdown
+    <span class="m-caret"></span>
+  </button>
+  <ul class="m-dropdown-menu">
+    <li><a href="#">Option 1</a></li>
+    <li><a href="#">Option 2</a></li>
+    <li><a href="#">Option 3</a></li>
+    <li><a href="#">Option 4</a></li>
+  </ul>
+</div>
+```
+
+### Browserify
 
 ```js
-
 var mDropdown = require('m-dropdown');
 
 mDropdown.initialize();
 ```
 
-### Command Line reference
+### Build a standalone version
 
 ```sh
 # Creates dist/browser.js
@@ -30,7 +41,6 @@ $ npm run browser
 
 ## Contribute or Report Issue
 For bugs and feature requests, [please create an issue][issue-url].
-
 
 ## License
 

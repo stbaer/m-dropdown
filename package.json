@@ -1,7 +1,7 @@
 {
   "name": "m-dropdown",
-  "version": "0.0.1",
-  "description": "dropdown",
+  "version": "0.0.2",
+  "description": "Lightweight dropdown menu",
   "main": "src/index.js",
   "bugs": {
     "url": "https://github.com/stbaer/m-dropdown/issues"
@@ -21,7 +21,8 @@
   ],
   "keywords": [
     "m-dropdown",
-    "dropdown"
+    "dropdown",
+    "menu"
   ],
   "dependencies": {},
   "devDependencies": {
@@ -30,7 +31,7 @@
     "gulp": "^3.9.0",
     "gulp-jshint": "^1.11.0",
     "gulp-watch": "^4.2.4",
-    "jshint-stylish": "^2.0.0"
+    "jshint-stylish": "^2.0.1"
   },
   "scripts": {
     "example": "beefy test/test.js --index=example.html",
