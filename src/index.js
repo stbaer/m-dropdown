@@ -8,7 +8,6 @@ var ATTR_SELECTOR = '[data-m-toggle="dropdown"]',
   OPEN_CLASS = 'm-open',
   MENU_CLASS = 'm-dropdown-menu';
 
-
 /**
  * Toggle the dropdown.
  *
@@ -73,7 +72,7 @@ function onToggleElClicked(ev) {
   }
 
   var toggleEl = this;
-  var isOpen = !!toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length;
+  var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
   // exit if toggle button is disabled
   if (toggleEl.getAttribute('disabled') !== null) {
@@ -123,4 +122,3 @@ module.exports = {
   }
 
 };
-
