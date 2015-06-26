@@ -3,6 +3,12 @@
   to {opacity: 1;}
 }
 
+@keyframes m-dropdown-open {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
 .m-dropdown {
   display: inline-block;
   position: relative;
@@ -35,6 +41,10 @@
 
 .m-dropdown-menu.m-open {
   display: block;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s;
+  -webkit-animation-name: m-dropdown-open;
+  animation-name: m-dropdown-open;
 }
 
 .m-dropdown-menu > li > a {

@@ -1,7 +1,7 @@
 {
   "name": "m-dropdown",
   "version": "0.0.1",
-  "description": "dropdown",
+  "description": "Lightweight dropdown menu",
   "main": "src/index.js",
   "bugs": {
     "url": "https://github.com/stbaer/m-dropdown/issues"
@@ -21,7 +21,8 @@
   ],
   "keywords": [
     "m-dropdown",
-    "dropdown"
+    "dropdown",
+    "menu"
   ],
   "dependencies": {},
   "devDependencies": {
