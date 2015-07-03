@@ -1,6 +1,6 @@
 {
   "name": "m-dropdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Lightweight dropdown menu",
   "main": "src/index.js",
   "bugs": {
@@ -29,7 +29,7 @@
     "beefy": "^2.1.5",
     "browserify": "^10.2.4",
     "gulp": "^3.9.0",
-    "gulp-jshint": "^1.11.0",
+    "gulp-jshint": "^1.11.2",
     "gulp-watch": "^4.2.4",
     "jshint-stylish": "^2.0.1"
   },

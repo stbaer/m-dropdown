@@ -4,9 +4,9 @@
  * @module m-dropdown
  */
 
-var ATTR_SELECTOR = '[data-m-toggle="dropdown"]',
-  OPEN_CLASS = 'm-open',
-  MENU_CLASS = 'm-dropdown-menu';
+var ATTR_SELECTOR = '[data-m-toggle="dropdown"]';
+var OPEN_CLASS = 'm-open';
+var MENU_CLASS = 'm-dropdown-menu';
 
 /**
  * Toggle the dropdown.
@@ -15,49 +15,49 @@ var ATTR_SELECTOR = '[data-m-toggle="dropdown"]',
  */
 function toggle(toggleEl) {
 
-  var wrapperEl = toggleEl.parentNode,
-    menuEl = toggleEl.nextElementSibling,
-    doc = wrapperEl.ownerDocument;
+    var wrapperEl = toggleEl.parentNode;
+    var menuEl = toggleEl.nextElementSibling;
+    var doc = wrapperEl.ownerDocument;
 
-  // exit if no menu element
-  if (!menuEl || !menuEl.classList.contains(MENU_CLASS)) {
-    return console.warn('Dropdown menu element not found');
-  }
+    // exit if no menu element
+    if (!menuEl || !menuEl.classList.contains(MENU_CLASS)) {
+        return console.warn('Dropdown menu element not found');//jshint ignore:line
+    }
 
-  function stopPropagation(ev) {
-    ev.stopPropagation();
-  }
+    function close() {
+        menuEl.classList.remove(OPEN_CLASS);
+        doc.removeEventListener('click', close);
+    }
 
-  function close() {
-    menuEl.classList.remove(OPEN_CLASS);
+    function open() {
+        // position menu element below toggle button
+        var wrapperRect = wrapperEl.getBoundingClientRect();
+        var toggleRect = toggleEl.getBoundingClientRect();
+        var top = toggleRect.top - wrapperRect.top + toggleRect.height;
 
-    // remove event handlers
-    doc.removeEventListener('click', close);
-    menuEl.removeEventListener('click', stopPropagation);
-    toggleEl.removeEventListener('click', stopPropagation);
-  }
+        menuEl.style.top = top + 'px';
+        menuEl.classList.add(OPEN_CLASS);
+        doc.addEventListener('click', close);
+    }
 
-  function open() {
-    // position menu element below toggle button
-    var wrapperRect = wrapperEl.getBoundingClientRect(),
-      toggleRect = toggleEl.getBoundingClientRect();
+    if (menuEl.classList.contains(OPEN_CLASS)) {
+        close();
+    }
+    else {
+        open();
+    }
+}
 
-    var top = toggleRect.top - wrapperRect.top + toggleRect.height;
-    menuEl.style.top = top + 'px';
+function closeAllOpened(){
+    //close all open menus
+    var toggleElements = document.querySelectorAll(ATTR_SELECTOR);
+    var i = toggleElements.length - 1;
 
-    menuEl.classList.add(OPEN_CLASS);
-
-    toggleEl.addEventListener('click', stopPropagation);
-    menuEl.addEventListener('click', stopPropagation);
-    doc.addEventListener('click', close);
-  }
-
-  if (menuEl.classList.contains(OPEN_CLASS)) {
-    close();
-  }
-  else {
-    open();
-  }
+    for ( i; i >= 0; i--) {
+        if (toggleElements[i].parentNode.querySelectorAll('.' + OPEN_CLASS).length) {
+            toggle(toggleElements[i]);
+        }
+    }
 }
 
 /**
@@ -66,33 +66,21 @@ function toggle(toggleEl) {
  * @param {Event} ev - The DOM event
  */
 function onToggleElClicked(ev) {
-  // only left clicks
-  if (ev.button !== 0) {
-    return;
-  }
 
-  var toggleEl = this;
-  var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
+    var toggleEl = this;
+    var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
-  // exit if toggle button is disabled
-  if (toggleEl.getAttribute('disabled') !== null) {
-    return;
-  }
-  //close all open menus
-  var toggleElements = document.querySelectorAll(ATTR_SELECTOR);
-  for (var i = toggleElements.length - 1; i >= 0; i--) {
-    if(toggleElements[i].parentNode.querySelectorAll('.' + OPEN_CLASS).length){
-      toggle(toggleElements[i]);
+    if (toggleEl.getAttribute('disabled') === null && ev.button === 0) {
+
+        closeAllOpened();
+        // prevent form submission
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        if (!isOpen) { //nothing more to do
+            toggle(toggleEl);
+        }
     }
-  }
-
-  // prevent form submission
-  ev.preventDefault();
-  ev.stopPropagation();
-
-  if(!isOpen){ //nothing more to do
-    toggle(toggleEl);
-  }
 }
 
 /**
@@ -100,25 +88,25 @@ function onToggleElClicked(ev) {
  * @param {Element} toggleEl - The toggle element.
  */
 function init(toggleEl) {
-  // check flag
-  if (toggleEl._mDropdown === true) {
-    return;
-  }
-  toggleEl._mDropdown = true;
-  toggleEl.addEventListener('click', onToggleElClicked);
+    // check flag
+    if (toggleEl._mDropdown === true) {
+        return;
+    }
+    toggleEl._mDropdown = true;
+    toggleEl.addEventListener('click', onToggleElClicked);
 }
 
 
 /** module API */
 module.exports = {
 
-  initialize: function () {
-    var doc = document;
+    initialize: function () {
+        var doc = document;
 
-    var elList = doc.querySelectorAll(ATTR_SELECTOR);
-    for (var i = elList.length - 1; i >= 0; i--) {
-      init(elList[i]);
+        var elList = doc.querySelectorAll(ATTR_SELECTOR);
+        for (var i = elList.length - 1; i >= 0; i--) {
+            init(elList[i]);
+        }
     }
-  }
 
 };
