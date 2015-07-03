@@ -1,14 +1,17 @@
 # m-dropdown [![Dependency Status][daviddm-url]][daviddm-image]
 
-[![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+[![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
 > Lightweight dropdown menu
 
+## Install
+```sh
+$ npm install m-dropdown
+```
+[![NPM](https://nodei.co/npm/m-dropdown.png?downloads=true)](https://nodei.co/npm/m-dropdown/)
+
 ## Usage
 
-```sh
-$ npm install --save m-dropdown
-```
 ```html
 <div class="m-dropdown">
   <button data-m-toggle="dropdown">
