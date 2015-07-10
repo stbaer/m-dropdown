@@ -27,7 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "beefy": "^2.1.5",
-    "browserify": "^10.2.4",
+    "browserify": "^10.2.6",
     "gulp": "^3.9.0",
     "gulp-jshint": "^1.11.2",
     "gulp-watch": "^4.2.4",
