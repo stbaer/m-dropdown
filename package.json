@@ -1,8 +1,8 @@
 {
   "name": "m-dropdown",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Lightweight dropdown menu",
-  "main": "src/index.js",
+  "main": "src/js/index.js",
   "bugs": {
     "url": "https://github.com/stbaer/m-dropdown/issues"
   },
@@ -16,8 +16,8 @@
   },
   "license": "MIT",
   "files": [
-    "src/index.js",
-    "src/styles.css"
+    "src",
+    "dist"
   ],
   "keywords": [
     "m-dropdown",
@@ -28,14 +28,26 @@
   "devDependencies": {
     "beefy": "^2.1.5",
     "browserify": "^10.2.6",
+    "del": "^1.2.0",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-csso": "^1.0.0",
     "gulp-jshint": "^1.11.2",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^1.2.3",
     "gulp-watch": "^4.2.4",
-    "jshint-stylish": "^2.0.1"
+    "jshint-stylish": "^2.0.1",
+    "require-dir": "^0.3.0",
+    "uglifyjs": "latest"
   },
   "scripts": {
-    "example": "beefy test/test.js --index=example.html",
-    "browser": "browserify src/index.js > dist/browser.js",
+    "uglify:dist": "uglifyjs ./dist/m-dropdown.js > ./dist/m-dropdown.min.js",
+    "uglify": "npm run uglify:dist && npm run show-gzipped-minjs-size",
+    "show-gzipped-minjs-size": "echo \"js minified and gzipped: \" && gzip -c dist/m-dropdown.min.js | wc -c",
+    "example": "beefy test/visual.js --index=example.html --live",
+    "build": "gulp clean && gulp styles && browserify src/js/index.js --standalone mDropdown > dist/m-dropdown.js && npm run uglify",
     "test": "gulp test"
   }
 }

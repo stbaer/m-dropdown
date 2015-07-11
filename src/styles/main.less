@@ -1,0 +1,56 @@
+@import "./variables";
+
+@keyframes m-dropdown-open {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.m-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.m-dropdown > [data-m-toggle="dropdown"] {
+  outline: 0;
+  cursor: pointer;
+}
+
+.m-dropdown > [disabled]{
+    cursor: not-allowed;
+}
+
+.m-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: @menu-min-width;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  text-align: left;
+  background-color: @menu-bg-color;
+  z-index: 1;
+  background-clip: padding-box;
+
+  > li {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    &:hover, &:focus {
+      background-color: #EEEEEE;
+    }
+  }
+
+  &.m-open {
+    display: block;
+    animation-duration: @open-animation-duration;
+    animation-name: m-dropdown-open;
+  }
+}
+
+
+.m-dropdown-menu-right {
+  left: auto;
+  right: 0;
+}

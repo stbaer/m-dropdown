@@ -2,45 +2,58 @@
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-> Lightweight dropdown menu
+> Lightweight dropdown menu ( minified and gzipped ~1kB js and 0.4kB css )
 
 ## Install
+
 ```sh
-$ npm install m-dropdown
+$ npm i m-dropdown
 ```
 [![NPM](https://nodei.co/npm/m-dropdown.png?downloads=true)](https://nodei.co/npm/m-dropdown/)
 
 ## Usage
 
+**HTML**
+
 ```html
 <div class="m-dropdown">
   <button data-m-toggle="dropdown">
-    Dropdown
-    <span class="m-caret"></span>
+    Dropdown toggle<span class="m-caret"></span>
   </button>
   <ul class="m-dropdown-menu">
-    <li><a href="#">Option 1</a></li>
-    <li><a href="#">Option 2</a></li>
-    <li><a href="#">Option 3</a></li>
-    <li><a href="#">Option 4</a></li>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>...</li>
   </ul>
 </div>
 ```
 
-### Browserify
+**JS**
+
+- Browserify:
 
 ```js
-var mDropdown = require('m-dropdown');
+var mDropdown = require('m-dropdown'); //*
 
+// initialize all dropdowns
 mDropdown.initialize();
 ```
+- Standalone:
 
-### Build a standalone version
+    include *dist/m-dropdown.min.js* - this exposes mDropdown. Use like above without the require statement.
+    See *index.html*.
+
+**CSS**
+
+ *dist/css/m-dropdown.min.css* includes the basic styles, extend as needed.
+
+### Build
 
 ```sh
-# Creates dist/browser.js
-$ npm run browser
+$ npm i && npm run build
 ```
+
+### Run the examples
 
 ## Contribute or Report Issue
 For bugs and feature requests, [please create an issue][issue-url].

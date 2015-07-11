@@ -1,6 +1,6 @@
 'use strict';
 
-var mDropdown = require('../src');
+var mDropdown = require('../');
 
 function init() {
   mDropdown.initialize();
