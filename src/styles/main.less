@@ -1,10 +1,4 @@
-@open-animation-duration: 0.4s;
-@menu-min-width: 160px;
-
-@keyframes m-node-inserted {
-  from {opacity: 0.99;}
-  to {opacity: 1;}
-}
+@import "./variables";
 
 @keyframes m-dropdown-open {
   from {opacity: 0;}
@@ -17,8 +11,6 @@
 }
 
 .m-dropdown > [data-m-toggle="dropdown"] {
-  animation-duration: 0.001s;
-  animation-name: m-node-inserted;
   outline: 0;
   cursor: pointer;
 }
@@ -36,10 +28,8 @@
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
-  font-size: 14px;
   text-align: left;
-  background-color: #FFF;
-  border-radius: 2px;
+  background-color: @menu-bg-color;
   z-index: 1;
   background-clip: padding-box;
 
@@ -47,13 +37,7 @@
     display: block;
     padding: 3px 20px;
     clear: both;
-    font-weight: normal;
-    line-height: 1.429;
-    color: rgba(0, 0, 0, 0.87);
-    white-space: nowrap;
     &:hover, &:focus {
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.87);
       background-color: #EEEEEE;
     }
   }
