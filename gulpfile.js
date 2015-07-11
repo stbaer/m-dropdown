@@ -1,17 +1,15 @@
 'use strict';
-var gulp = require('gulp'),
-	jshint = require('gulp-jshint');
 
-gulp.task('jshint', function() {
-	return gulp.src(['./**/*.js', '!node_modules/**/*.js'])
-		.pipe(jshint())
-		.pipe(jshint.reporter('jshint-stylish'));
-});
+var gulp        = require('gulp'),
+    requireDir  = require('require-dir');
+
+// Require all tasks in gulp/tasks, including subfolders
+requireDir('./tasks', { recurse: true });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  gulp.watch('<%= jshint.js.src %>', ['jshint']);
-  gulp.watch(['<%= jshint.js.src %>', '<%= jshint.test.src %>'], ['jshint', 'test']);
+  gulp.watch('src/js/**/*.js', ['jshint']);
+  gulp.watch('src/styles/**/*.js', ['styles']);
 });
 
 gulp.task('default', ['jshint', 'watch']);

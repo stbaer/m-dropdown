@@ -6,7 +6,7 @@
 
 ## Install
 ```sh
-$ npm install m-dropdown
+$ npm i m-dropdown
 ```
 [![NPM](https://nodei.co/npm/m-dropdown.png?downloads=true)](https://nodei.co/npm/m-dropdown/)
 
@@ -38,8 +38,7 @@ mDropdown.initialize();
 ### Build a standalone version
 
 ```sh
-# Creates dist/browser.js
-$ npm run browser
+$ npm run build
 ```
 
 ## Contribute or Report Issue
