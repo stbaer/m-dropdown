@@ -17,7 +17,9 @@
   "license": "MIT",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "index.html",
+    "example.html"
   ],
   "keywords": [
     "m-dropdown",
@@ -48,6 +50,7 @@
     "show-gzipped-minjs-size": "echo \"js minified and gzipped: \" && gzip -c dist/m-dropdown.min.js | wc -c",
     "example": "beefy test/visual.js --index=example.html --live",
     "build": "gulp clean && gulp styles && browserify src/js/index.js --standalone mDropdown > dist/m-dropdown.js && npm run uglify",
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "npm run build && npm run example"
   }
 }
