@@ -268,8 +268,9 @@ textarea {
 button {
   overflow: visible;
   border: none;
-  background: white;
-  padding: 5px 10px; 
+  background: #2196F3;
+  color: white;
+  padding: 5px 10px;
 }
 
 /**
