@@ -77,7 +77,12 @@
         </ul>
     </div>
 </div>
-
+<hr>
+<div>
+    <!-- test/visual.js exposes globals.mDropdown for testing -->
+    <button onclick="globals.mDropdown.initialize()">initialize all <code>mDropdown.initialize()</code></button>
+    <button onclick="globals.mDropdown.destroyAll()">Destroy instances <code>mDropdown.destroyAll()</code></button>
+</div>
 
 <script src="{{entry}}"></script>
 </body>

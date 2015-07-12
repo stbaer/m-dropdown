@@ -2,7 +2,7 @@
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-> Lightweight dropdown menu ( minified and gzipped ~1kB js and 0.4kB css )
+> Lightweight dropdown menu ( minified and gzipped ~ 1 kB js / 0.4 kB css )
 
 ## Install
 
@@ -37,6 +37,15 @@ var mDropdown = require('m-dropdown'); //*
 
 // initialize all dropdowns
 mDropdown.initialize();
+// destroy all dropdowns
+mDropdown.destroyAll();
+
+var singleDropdownToggleElement = document.querySelector(/* toggle button selector */);
+
+// initialize a single dropdown
+mDropdown.init(singleDropdownToggleElement);
+// destroy a single dropdown
+mDropdown.init(singleDropdownToggleElement);
 ```
 - Standalone:
 
@@ -49,14 +58,20 @@ mDropdown.initialize();
 
 ### Build
 
+**Install devDependencies**
 ```sh
-$ npm i && npm run build
+$ npm i
 ```
 
-### Run the examples
+**Build & run the example**
+```sh
+$ npm start
+```
 
 ## Contribute or Report Issue
 For bugs and feature requests, [please create an issue][issue-url].
+
+Pull requests should target the develop branch.
 
 ## License
 

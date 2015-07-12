@@ -98,6 +98,9 @@ function init(toggleEl) {
     }
 }
 
+/**
+ *
+ */
 function destroy(toggleEl) {
     // check flag
     if (toggleEl._mDropdown === true) {
@@ -128,6 +131,7 @@ module.exports = {
         }
     },
     init: init,
+    toggle: toggle,
     destroy: destroy
 };
 
