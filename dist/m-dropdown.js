@@ -92,27 +92,43 @@ function onToggleElClicked(ev) {
  * @param {Element} toggleEl - The toggle element.
  */
 function init(toggleEl) {
-    // check flag
-    if (toggleEl._mDropdown === true) {
-        return;
+    if (!toggleEl._mDropdown === true) {
+        toggleEl._mDropdown = true;
+        toggleEl.addEventListener('click', onToggleElClicked);
     }
-    toggleEl._mDropdown = true;
-    toggleEl.addEventListener('click', onToggleElClicked);
 }
 
+function destroy(toggleEl) {
+    // check flag
+    if (toggleEl._mDropdown === true) {
+        // close if it's open
+        if (toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length) {
+            toggle(toggleEl);
+        }
+        toggleEl._mDropdown = null;
+        toggleEl.removeEventListener('click', onToggleElClicked);
+    }
+}
 
 /** module API */
 module.exports = {
 
     initialize: function () {
-        var doc = document;
-
-        var elList = doc.querySelectorAll(ATTR_SELECTOR);
-        for (var i = elList.length - 1; i >= 0; i--) {
-            init(elList[i]);
+        var elements = document.querySelectorAll(ATTR_SELECTOR);
+        var i = elements.length - 1;
+        for (i; i >= 0; i--) {
+            init(elements[i]);
         }
-    }
-
+    },
+    destroyAll: function () {
+        var elements = document.querySelectorAll(ATTR_SELECTOR);
+        var i = elements.length - 1;
+        for (i; i >= 0; i--) {
+            destroy(elements[i]);
+        }
+    },
+    init: init,
+    destroy: destroy
 };
 
 },{}]},{},[1])(1)
