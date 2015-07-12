@@ -10,7 +10,7 @@ html {
   font-family: sans-serif; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -ms-text-size-adjust: 100%; /* 2 */
-   background: #ddd
+  background-color: #CFD8DC;
 }
 
 /**
@@ -19,7 +19,7 @@ html {
 
 body {
   margin: 0;
-   background: #ddd
+   background: #CFD8DC;
 }
 
 /* HTML5 display definitions
@@ -251,7 +251,6 @@ samp {
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
 
-button,
 input,
 optgroup,
 select,
@@ -304,7 +303,6 @@ input[type="submit"] {
  * Re-set default cursor for disabled elements.
  */
 
-button[disabled],
 html input[disabled] {
   cursor: default;
 }
@@ -438,7 +436,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #666;
-  background: #ddd;
+  background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
 }
 
 p {
