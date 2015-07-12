@@ -268,8 +268,7 @@ textarea {
 button {
   overflow: visible;
   border: none;
-  background: #2196F3;
-  color: white;
+  background: white;
   padding: 5px 10px;
 }
 
@@ -439,7 +438,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #666;
-  background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
+  background: #ddd;
 }
 
 p {
