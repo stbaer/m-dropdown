@@ -1,0 +1,96 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" href="dist/css/m-dropdown.css"/>
+    <style>
+    *, *:before, *:after { -webkit-box-sizing: border-box;  -moz-box-sizing: border-box; box-sizing: border-box; }
+        html { color: #404040; font-family: Helvetica, arial, sans-serif; }
+        body { padding: 50px 20px; margin: 0 auto; max-width: 800px;  background: #ddd;}
+        button { border: none; background: white; padding: 5px 10px; }
+        code {color: red;}
+    </style>
+</head>
+
+<body>
+<!-- -->
+<div>
+    <h2>Dropdown</h2>
+    <div class="m-dropdown">
+        <button data-m-toggle="dropdown">
+            Dropdown
+            <span class="m-caret"></span>
+        </button>
+        <ul class="m-dropdown-menu">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+        </ul>
+    </div>
+</div>
+
+<!-- -->
+<div>
+    <h2>Another one</h2>
+    <div class="m-dropdown">
+        <button data-m-toggle="dropdown">
+            Dropdown
+            <span class="m-caret"></span>
+        </button>
+        <ul class="m-dropdown-menu">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+        </ul>
+    </div>
+</div>
+
+<!-- -->
+<div>
+    <h2>Disabled Dropdown</h2>
+    <p>(add the disabled attribute to the toggle button)</p>
+    <div class="m-dropdown">
+        <button data-m-toggle="dropdown" disabled>
+            Disabled Dropdown
+            <span class="m-caret"></span>
+        </button>
+        <ul class="m-dropdown-menu m-dropdown-menu-right">
+            <li>Option 1</li>
+            <li>Option 2</li>
+        </ul>
+    </div>
+</div>
+<!-- -->
+<div>
+    <h2>Align menu right</h2>
+    <p>(add .m-dropdown-menu-right to the menu (ul) )</p>
+    <div class="m-dropdown">
+        <button data-m-toggle="dropdown">
+            Dropdown
+            <span class="m-caret"></span>
+        </button>
+        <ul class="m-dropdown-menu m-dropdown-menu-right">
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+        </ul>
+    </div>
+</div>
+<hr>
+<div>
+    <button onclick="mDropdown.initialize()">initialize all <code>mDropdown.initialize()</code></button>
+    <button onclick="mDropdown.destroyAll()">Destroy instances <code>mDropdown.destroyAll()</code></button>
+</div>
+
+
+<script src="dist/m-dropdown.min.js"></script>
+<script>
+    function init() {
+      mDropdown.initialize();
+    }
+    window.onload = init;
+</script>
+
+</body>
