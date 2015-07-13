@@ -63,6 +63,10 @@ function closeAllOpened(){
     }
 }
 
+function isDisabled(toggleEl){
+    return toggleEl.getAttribute('disabled') !== null || toggleEl.classList.contains('disabled');
+}
+
 /**
  * Handle click events on dropdown toggle element.
  *
@@ -73,7 +77,7 @@ function onToggleElClicked(ev) {
     var toggleEl = this;
     var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
-    if (toggleEl.getAttribute('disabled') === null && ev.button === 0) {
+    if (!isDisabled(toggleEl) && ev.button === 0) {
 
         closeAllOpened();
         // prevent form submission

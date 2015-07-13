@@ -2,7 +2,7 @@
 
 [![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
 
-> Lightweight dropdown menu ( minified and gzipped ~ 1 kB js / 0.4 kB css )
+> Lightweight dropdown menu ( minified and gzipped ~ 1 kB js / 0.4 kB css ) - [Examples](http://stbaer.github.io/m-dropdown/)
 
 ## Install
 
