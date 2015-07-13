@@ -65,8 +65,23 @@
 
           <!-- -->
           <div>
-              <h2>Disabled Dropdown</h2>
-              <p>(add the disabled attribute to the toggle button)</p>
+              <h2>Disabled by data attribute</h2>
+              <p>(add a disabled attribute to the toggle button)</p>
+              <div class="m-dropdown">
+                  <button data-m-toggle="dropdown" disabled>
+                      Disabled Dropdown
+                      <span class="m-caret"></span>
+                  </button>
+                  <ul class="m-dropdown-menu m-dropdown-menu-right">
+                      <li>Option 1</li>
+                      <li>Option 2</li>
+                  </ul>
+              </div>
+          </div>
+          <!-- -->
+          <div>
+              <h2>Disabled by class name</h2>
+              <p>(add .disabled to the toggle button)</p>
               <div class="m-dropdown">
                   <button data-m-toggle="dropdown" disabled>
                       Disabled Dropdown
