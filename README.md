@@ -45,7 +45,7 @@ var singleDropdownToggleElement = document.querySelector(/* toggle button select
 // initialize a single dropdown
 mDropdown.init(singleDropdownToggleElement);
 // destroy a single dropdown
-mDropdown.init(singleDropdownToggleElement);
+mDropdown.destroy(singleDropdownToggleElement);
 ```
 - Standalone:
 
