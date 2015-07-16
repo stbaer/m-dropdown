@@ -16,11 +16,11 @@ var MENU_CLASS = 'm-dropdown-menu';
 function toggle(toggleEl) {
 
     var wrapperEl = toggleEl.parentNode;
-    var menuEl = toggleEl.nextElementSibling;
+    var menuEl = wrapperEl.querySelector('.' + MENU_CLASS);
     var doc = wrapperEl.ownerDocument;
 
     // exit if no menu element
-    if (!menuEl || !menuEl.classList.contains(MENU_CLASS)) {
+    if (!menuEl) {
         return console.warn('Dropdown menu element not found');//jshint ignore:line
     }
 
