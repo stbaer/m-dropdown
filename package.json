@@ -1,6 +1,6 @@
 {
   "name": "m-dropdown",
-  "version": "0.2.2",
+  "version": "0.2.3-0",
   "description": "Lightweight dropdown menu",
   "main": "src/js/index.js",
   "bugs": {
