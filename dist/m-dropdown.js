@@ -64,6 +64,11 @@ function closeAllOpened(){
     }
 }
 
+/**
+ * Returns true if the dropdown toggle contains a disabled class or attribute
+ * @param  {Element}  toggleEl The dropdown toggle
+ * @return {Boolean}
+ */
 function isDisabled(toggleEl){
     return toggleEl.getAttribute('disabled') !== null || toggleEl.classList.contains('disabled');
 }
@@ -75,7 +80,7 @@ function isDisabled(toggleEl){
  */
 function onToggleElClicked(ev) {
 
-    var toggleEl = this;
+    var toggleEl = ev.currentTarget;
     var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
     if (!isDisabled(toggleEl) && ev.button === 0) {
@@ -96,7 +101,7 @@ function onToggleElClicked(ev) {
  * @param {Element} toggleEl - The toggle element.
  */
 function init(toggleEl) {
-    if (!toggleEl._mDropdown === true) {
+    if (toggleEl._mDropdown !== true) {
         toggleEl._mDropdown = true;
         toggleEl.addEventListener('click', onToggleElClicked);
     }
