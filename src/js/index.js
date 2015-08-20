@@ -79,7 +79,7 @@ function isDisabled(toggleEl){
  */
 function onToggleElClicked(ev) {
 
-    var toggleEl = ev.target;
+    var toggleEl = ev.currentTarget;
     var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
     if (!isDisabled(toggleEl) && ev.button === 0) {
