@@ -55,6 +55,11 @@
   -webkit-animation-name: m-dropdown-open;
           animation-name: m-dropdown-open;
 }
+.m-dropdown-menu.m-dropup {
+  top: auto;
+  bottom: 100%;
+  margin: 0 0 2px;
+}
 .m-dropdown-menu-right {
   left: auto;
   right: 0;

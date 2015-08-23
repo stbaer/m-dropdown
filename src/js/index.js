@@ -30,12 +30,6 @@ function toggle(toggleEl) {
     }
 
     function open() {
-        // position menu element below toggle button
-        var wrapperRect = wrapperEl.getBoundingClientRect();
-        var toggleRect = toggleEl.getBoundingClientRect();
-        var top = toggleRect.top - wrapperRect.top + toggleRect.height;
-
-        menuEl.style.top = top + 'px';
         menuEl.classList.add(OPEN_CLASS);
         doc.addEventListener('click', close);
     }
