@@ -1,4 +1,6 @@
-@import "./variables";
+@menu-bg-color: #FFF;
+@open-animation-duration: 0.4s;
+@menu-min-width: 160px;
 
 @keyframes m-dropdown-open {
   from {opacity: 0;}
@@ -46,6 +48,11 @@
     display: block;
     animation-duration: @open-animation-duration;
     animation-name: m-dropdown-open;
+  }
+  &.m-dropup {
+      top: auto;
+      bottom: 100%;
+      margin: 0 0 2px;
   }
 }
 
