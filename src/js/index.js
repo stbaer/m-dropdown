@@ -134,5 +134,6 @@ module.exports = {
     },
     init: init,
     toggle: toggle,
+    closeAll: closeAllOpened,
     destroy: destroy
 };
