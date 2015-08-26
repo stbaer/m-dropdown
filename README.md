@@ -33,7 +33,7 @@ $ npm i m-dropdown
 - Browserify:
 
 ```js
-var mDropdown = require('m-dropdown'); //*
+var mDropdown = require('m-dropdown'); //or include the standalone version from the dist folder
 
 // initialize all dropdowns
 mDropdown.initialize();
@@ -47,11 +47,6 @@ mDropdown.init(singleDropdownToggleElement);
 // destroy a single dropdown
 mDropdown.destroy(singleDropdownToggleElement);
 ```
-- Standalone:
-
-    include *dist/m-dropdown.min.js* - this exposes mDropdown. Use like above without the require statement.
-    See *index.html*.
-
 **CSS**
 
  *dist/css/m-dropdown.min.css* includes the basic styles, extend as needed.
