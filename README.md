@@ -17,9 +17,7 @@ $ npm i m-dropdown
 
 ```html
 <div class="m-dropdown">
-  <button data-m-toggle="dropdown">
-    Dropdown toggle<span class="m-caret"></span>
-  </button>
+  <button data-m-toggle="dropdown">Dropdown toggle</button>
   <ul class="m-dropdown-menu">
     <li>Item 1</li>
     <li>Item 2</li>
