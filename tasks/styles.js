@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    plugins = require("gulp-load-plugins")(),
+    plugins = require('gulp-load-plugins')(),
     meta = require('../package.json');
 
 var AUTOPREFIXER_BROWSERS = [
@@ -22,7 +22,7 @@ gulp.task('styles', function () {
         .pipe(plugins.less())
         .pipe(plugins.autoprefixer(AUTOPREFIXER_BROWSERS))
         .pipe(plugins.rename(function (path) {
-            path.basename = meta.name
+            path.basename = meta.name;
         }))
         .pipe(gulp.dest('dist/css'))
         .pipe(plugins.size({
