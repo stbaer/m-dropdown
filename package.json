@@ -29,10 +29,9 @@
   "dependencies": {},
   "devDependencies": {
     "beefy": "^2.1.5",
-    "browserify": "^11.0.1",
-    "del": "^1.2.1",
+    "browserify": "^11.1.0",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^3.0.1",
     "gulp-csso": "^1.0.0",
     "gulp-jshint": "^1.11.2",
     "gulp-less": "^3.0.3",
@@ -50,8 +49,8 @@
     "show-gzipped-minjs-size": "echo \"js minified and gzipped: \" && gzip -c dist/m-dropdown.min.js | wc -c",
     "example": "beefy test/visual.js --index=example.html --live",
     "example-standalone": "beefy --index=exampleStandalone.html",
-    "build": "gulp clean && gulp styles && browserify src/js/index.js --standalone mDropdown > dist/m-dropdown.js && npm run uglify",
-    "test": "gulp test",
+    "clean": "rm -r dist/*",
+    "build": "npm run clean && gulp styles && browserify src/js/index.js --standalone mDropdown > dist/m-dropdown.js && npm run uglify",
     "start": "npm run build && npm run example"
   }
 }
