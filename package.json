@@ -41,7 +41,7 @@
     "gulp-watch": "^4.3.5",
     "jshint-stylish": "^2.0.1",
     "require-dir": "^0.3.0",
-    "uglifyjs": "latest"
+    "uglify-js": "latest"
   },
   "scripts": {
     "uglify:dist": "uglifyjs ./dist/m-dropdown.js --screw-ie8 -cm > ./dist/m-dropdown.min.js",
@@ -49,7 +49,7 @@
     "show-gzipped-minjs-size": "echo \"js minified and gzipped: \" && gzip -c dist/m-dropdown.min.js | wc -c",
     "example": "beefy test/visual.js --index=example.html --live",
     "example-standalone": "beefy --index=exampleStandalone.html",
-    "clean": "rm -r dist/*",
+    "clean": "rm -rf dist",
     "build": "npm run clean && gulp styles && browserify src/js/index.js --standalone mDropdown > dist/m-dropdown.js && npm run uglify",
     "start": "npm run build && npm run example"
   }
