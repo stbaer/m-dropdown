@@ -103,7 +103,6 @@ function init(toggleEl) {
 
 /**
  *
- * @param {Element} toggleEl
  */
 function destroy(toggleEl) {
     // check flag

@@ -1,6 +1,6 @@
 {
   "name": "m-dropdown",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Lightweight dropdown menu",
   "main": "src/js/index.js",
   "bugs": {
@@ -29,17 +29,17 @@
   "dependencies": {},
   "devDependencies": {
     "beefy": "^2.1.5",
-    "browserify": "^11.2.0",
+    "browserify": "^13.0.0",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
-    "gulp-csso": "^1.0.0",
-    "gulp-jshint": "^1.11.2",
-    "gulp-less": "^3.0.3",
-    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csso": "^1.0.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-size": "^2.0.0",
     "gulp-watch": "^4.3.5",
-    "jshint-stylish": "^2.0.1",
+    "jshint-stylish": "^2.1.0",
     "require-dir": "^0.3.0",
     "uglify-js": "latest"
   },
