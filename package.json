@@ -61,8 +61,8 @@
           "presets": [
             "es2015"
           ],
-          "ignore": [
-            "node_modules/"
+          "only": [
+            "src/js/index.js"
           ]
         }
       ],
