@@ -1,15 +1,12 @@
-# m-dropdown [![Dependency Status][daviddm-url]][daviddm-image]
+# m-dropdown
 
-[![unstable](http://badges.github.io/stability-badges/dist/unstable.svg)](http://github.com/badges/stability-badges)
-
-> Lightweight dropdown menu ( minified and gzipped ~ 1 kB js / 0.4 kB css ) - [Examples](http://stbaer.github.io/m-dropdown/)
+> Lightweight dropdown menu ( minified and gzipped ~ 1.5 kB js ) - [Examples](http://stbaer.github.io/m-dropdown/)
 
 ## Install
 
 ```sh
 $ npm i m-dropdown
 ```
-[![NPM](https://nodei.co/npm/m-dropdown.png?downloads=true)](https://nodei.co/npm/m-dropdown/)
 
 ## Usage
 
@@ -31,7 +28,7 @@ $ npm i m-dropdown
 - Browserify:
 
 ```js
-var mDropdown = require('m-dropdown'); //or include the standalone version from the dist folder
+var mDropdown = require('m-dropdown');
 
 // initialize all dropdowns
 mDropdown.initialize();
@@ -50,9 +47,10 @@ mDropdown.destroy(dropdownToggleElement);
 // close opened dropdowns if there are any
 mDropdown.closeAll();
 ```
-**CSS**
 
- *dist/css/m-dropdown.min.css* includes the basic styles, extend as needed.
+- Standalone:
+
+    Include the standalone version from the dist folder instead of *require('m-dropdown')*
 
 ### Build
 
@@ -76,5 +74,3 @@ Pull requests should target the develop branch.
 MIT © [Steffen Bär](https://github.com/stbaer)
 
 [issue-url]: https://github.com/stbaer/m-dropdown/issues
-[daviddm-url]: https://david-dm.org/stbaer/m-dropdown.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/stbaer/m-dropdown
