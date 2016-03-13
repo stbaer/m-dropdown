@@ -1,5 +1,5 @@
 
-globals = {}; // for testing only
+window.globals = window.globals || {}; // testing only
 var mDropdown = require('../');
 globals.mDropdown = mDropdown;
 

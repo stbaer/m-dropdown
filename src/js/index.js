@@ -1,12 +1,12 @@
-'use strict';
+require('../styles/prefixed/main.css');
 
 /**
  * @module m-dropdown
  */
 
-var ATTR_SELECTOR = '[data-m-toggle="dropdown"]';
-var OPEN_CLASS = 'm-open';
-var MENU_CLASS = 'm-dropdown-menu';
+const ATTR_SELECTOR = '[data-m-toggle="dropdown"]';
+const OPEN_CLASS = 'm-open';
+const MENU_CLASS = 'm-dropdown-menu';
 
 /**
  * Toggle the dropdown.
@@ -15,9 +15,9 @@ var MENU_CLASS = 'm-dropdown-menu';
  */
 function toggle(toggleEl) {
 
-    var wrapperEl = toggleEl.parentNode;
-    var menuEl = wrapperEl.querySelector('.' + MENU_CLASS);
-    var doc = wrapperEl.ownerDocument;
+    const wrapperEl = toggleEl.parentNode;
+    const menuEl = wrapperEl.querySelector('.' + MENU_CLASS);
+    const doc = wrapperEl.ownerDocument;
 
     // exit if no menu element
     if (!menuEl) {
@@ -47,8 +47,8 @@ function toggle(toggleEl) {
  */
 function closeAllOpened(){
     //close all open menus
-    var toggleElements = document.querySelectorAll(ATTR_SELECTOR);
-    var i = toggleElements.length - 1;
+    const toggleElements = document.querySelectorAll(ATTR_SELECTOR);
+    let i = toggleElements.length - 1;
 
     for ( i; i >= 0; i--) {
         if (toggleElements[i].parentNode.querySelectorAll('.' + OPEN_CLASS).length) {
@@ -73,8 +73,8 @@ function isDisabled(toggleEl){
  */
 function onToggleElClicked(ev) {
 
-    var toggleEl = ev.currentTarget;
-    var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
+    const toggleEl = ev.currentTarget;
+    const isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
     if (!isDisabled(toggleEl) && ev.button === 0) {
 
@@ -119,15 +119,15 @@ function destroy(toggleEl) {
 module.exports = {
 
     initialize: function () {
-        var elements = document.querySelectorAll(ATTR_SELECTOR);
-        var i = elements.length - 1;
+        const elements = document.querySelectorAll(ATTR_SELECTOR);
+        let i = elements.length - 1;
         for (i; i >= 0; i--) {
             init(elements[i]);
         }
     },
     destroyAll: function () {
-        var elements = document.querySelectorAll(ATTR_SELECTOR);
-        var i = elements.length - 1;
+        const elements = document.querySelectorAll(ATTR_SELECTOR);
+        let i = elements.length - 1;
         for (i; i >= 0; i--) {
             destroy(elements[i]);
         }
