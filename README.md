@@ -10,11 +10,9 @@ $ npm i m-dropdown
 
 ## Usage
 
-**HTML**
-
-```html
+```
 <div class="m-dropdown">
-  <button data-m-toggle="dropdown">Dropdown toggle</button>
+  <button class="dropdown-example" data-m-toggle="dropdown">Dropdown toggle</button>
   <ul class="m-dropdown-menu">
     <li>Item 1</li>
     <li>Item 2</li>
@@ -23,44 +21,32 @@ $ npm i m-dropdown
 </div>
 ```
 
-**JS**
+```
+var mDropdown = require('m-dropdown');  // or include the standalone version
 
-- Browserify:
 
-```js
-var mDropdown = require('m-dropdown');
+mDropdown.initialize();   // initialize all dropdowns
+mDropdown.destroyAll();   // destroy all dropdowns
 
-// initialize all dropdowns
-mDropdown.initialize();
-// destroy all dropdowns
-mDropdown.destroyAll();
+var dropdownToggleElement = document.querySelector('.dropdown-example');
 
-var dropdownToggleElement = document.querySelector(/* toggle button selector */);
-
-// initialize a single dropdown
-mDropdown.init(dropdownToggleElement);
-// toggle a single dropdown
-mDropdown.toggle(dropdownToggleElement);
-// destroy a single dropdown
-mDropdown.destroy(dropdownToggleElement);
-
-// close opened dropdowns if there are any
-mDropdown.closeAll();
+mDropdown.init(dropdownToggleElement);    // initialize a single dropdown
+mDropdown.toggle(dropdownToggleElement);  // toggle a single dropdown
+mDropdown.destroy(dropdownToggleElement); // destroy a single dropdown
+mDropdown.closeAll();                     // close opened dropdowns if there are any
 ```
 
-- Standalone:
 
-    Include the standalone version from the dist folder instead of *require('m-dropdown')*
 
 ### Build
 
-**Install devDependencies**
-```sh
+**Install dependencies**
+```
 $ npm i
 ```
 
 **Build & run the example**
-```sh
+```
 $ npm start
 ```
 
