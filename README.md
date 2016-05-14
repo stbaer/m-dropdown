@@ -24,7 +24,6 @@ $ npm i m-dropdown
 ```
 var mDropdown = require('m-dropdown');  // or include the standalone version
 
-
 mDropdown.initialize();   // initialize all dropdowns
 mDropdown.destroyAll();   // destroy all dropdowns
 
@@ -36,24 +35,17 @@ mDropdown.destroy(dropdownToggleElement); // destroy a single dropdown
 mDropdown.closeAll();                     // close opened dropdowns if there are any
 ```
 
-
-
-### Build
-
-**Install dependencies**
+**Install dependencies and run the example**
 ```
 $ npm i
-```
-
-**Build & run the example**
-```
 $ npm start
 ```
 
 ## Contribute or Report Issue
-For bugs and feature requests, [please create an issue][issue-url].
 
 Pull requests should target the develop branch.
+
+For bugs and feature requests, [please create an issue][issue-url].
 
 ## License
 
