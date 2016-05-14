@@ -54,7 +54,7 @@ module.exports.byUrl = function (url) {
 }
 
 },{}],2:[function(require,module,exports){
-'use strict';
+/* jshint browserify: true */
 
 require('../styles/prefixed/main.css');
 
@@ -69,7 +69,7 @@ var MENU_CLASS = 'm-dropdown-menu';
 /**
  * Toggle the dropdown.
  *
- * @param {Element} toggleEl - The dropdown toggle element.
+ * @param {Element|EventTarget} toggleEl - The dropdown toggle element.
  */
 function toggle(toggleEl) {
 
@@ -79,7 +79,7 @@ function toggle(toggleEl) {
 
     // exit if no menu element
     if (!menuEl) {
-        return console.warn('Dropdown menu element not found'); //jshint ignore:line
+        return console.warn('Dropdown menu element not found');//jshint ignore:line
     }
 
     function close() {
@@ -116,7 +116,7 @@ function closeAllOpened() {
 
 /**
  * Returns true if the dropdown toggle contains a disabled class or attribute
- * @param  {Element}  toggleEl The dropdown toggle
+ * @param  {Element|EventTarget}  toggleEl The dropdown toggle
  * @return {Boolean}
  */
 function isDisabled(toggleEl) {
@@ -133,15 +133,14 @@ function onToggleElClicked(ev) {
     var toggleEl = ev.currentTarget;
     var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
-    if (!isDisabled(toggleEl) && ev.button === 0) {
+    if (!isDisabled(toggleEl) && (ev.button === 0)) {
 
         closeAllOpened();
         // prevent form submission
         ev.preventDefault();
         ev.stopPropagation();
 
-        if (!isOpen) {
-            //nothing more to do
+        if (!isOpen) { //nothing more to do
             toggle(toggleEl);
         }
     }
@@ -176,14 +175,14 @@ function destroy(toggleEl) {
 /** module API */
 module.exports = {
 
-    initialize: function initialize() {
+    initialize: function () {
         var elements = document.querySelectorAll(ATTR_SELECTOR);
         var i = elements.length - 1;
         for (i; i >= 0; i--) {
             init(elements[i]);
         }
     },
-    destroyAll: function destroyAll() {
+    destroyAll: function () {
         var elements = document.querySelectorAll(ATTR_SELECTOR);
         var i = elements.length - 1;
         for (i; i >= 0; i--) {
