@@ -1,23 +1,25 @@
+/* jshint browserify: true */
+
 require('../styles/prefixed/main.css');
 
 /**
  * @module m-dropdown
  */
 
-const ATTR_SELECTOR = '[data-m-toggle="dropdown"]';
-const OPEN_CLASS = 'm-open';
-const MENU_CLASS = 'm-dropdown-menu';
+var ATTR_SELECTOR = '[data-m-toggle="dropdown"]';
+var OPEN_CLASS = 'm-open';
+var MENU_CLASS = 'm-dropdown-menu';
 
 /**
  * Toggle the dropdown.
  *
- * @param {Element} toggleEl - The dropdown toggle element.
+ * @param {Element|EventTarget} toggleEl - The dropdown toggle element.
  */
 function toggle(toggleEl) {
 
-    const wrapperEl = toggleEl.parentNode;
-    const menuEl = wrapperEl.querySelector('.' + MENU_CLASS);
-    const doc = wrapperEl.ownerDocument;
+    var wrapperEl = toggleEl.parentNode;
+    var menuEl = wrapperEl.querySelector('.' + MENU_CLASS);
+    var doc = wrapperEl.ownerDocument;
 
     // exit if no menu element
     if (!menuEl) {
@@ -36,8 +38,7 @@ function toggle(toggleEl) {
 
     if (menuEl.classList.contains(OPEN_CLASS)) {
         close();
-    }
-    else {
+    } else {
         open();
     }
 }
@@ -45,12 +46,12 @@ function toggle(toggleEl) {
 /**
  * Close all currently opened menus
  */
-function closeAllOpened(){
+function closeAllOpened() {
     //close all open menus
-    const toggleElements = document.querySelectorAll(ATTR_SELECTOR);
-    let i = toggleElements.length - 1;
+    var toggleElements = document.querySelectorAll(ATTR_SELECTOR);
+    var i = toggleElements.length - 1;
 
-    for ( i; i >= 0; i--) {
+    for (i; i >= 0; i--) {
         if (toggleElements[i].parentNode.querySelectorAll('.' + OPEN_CLASS).length) {
             toggle(toggleElements[i]);
         }
@@ -59,10 +60,10 @@ function closeAllOpened(){
 
 /**
  * Returns true if the dropdown toggle contains a disabled class or attribute
- * @param  {Element}  toggleEl The dropdown toggle
+ * @param  {Element|EventTarget}  toggleEl The dropdown toggle
  * @return {Boolean}
  */
-function isDisabled(toggleEl){
+function isDisabled(toggleEl) {
     return toggleEl.getAttribute('disabled') !== null || toggleEl.classList.contains('disabled');
 }
 
@@ -73,10 +74,10 @@ function isDisabled(toggleEl){
  */
 function onToggleElClicked(ev) {
 
-    const toggleEl = ev.currentTarget;
-    const isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
+    var toggleEl = ev.currentTarget;
+    var isOpen = toggleEl.parentNode.querySelectorAll('.' + OPEN_CLASS).length !== 0;
 
-    if (!isDisabled(toggleEl) && ev.button === 0) {
+    if (!isDisabled(toggleEl) && (ev.button === 0)) {
 
         closeAllOpened();
         // prevent form submission
@@ -119,15 +120,15 @@ function destroy(toggleEl) {
 module.exports = {
 
     initialize: function () {
-        const elements = document.querySelectorAll(ATTR_SELECTOR);
-        let i = elements.length - 1;
+        var elements = document.querySelectorAll(ATTR_SELECTOR);
+        var i = elements.length - 1;
         for (i; i >= 0; i--) {
             init(elements[i]);
         }
     },
     destroyAll: function () {
-        const elements = document.querySelectorAll(ATTR_SELECTOR);
-        let i = elements.length - 1;
+        var elements = document.querySelectorAll(ATTR_SELECTOR);
+        var i = elements.length - 1;
         for (i; i >= 0; i--) {
             destroy(elements[i]);
         }
