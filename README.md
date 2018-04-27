@@ -1,6 +1,6 @@
 # m-dropdown
 
-> Lightweight dropdown menu ( minified and gzipped ~ 1.5 kB js ) - [Examples](http://stbaer.github.io/m-dropdown/)
+> Lightweight dropdown menu [Examples](http://stbaer.github.io/m-dropdown/)
 
 ## Install
 
